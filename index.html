@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Happy 18th Birthday, Meow ❤️</title>
+    <title>Happy 18th Birthday, My Love❤️</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -115,18 +115,18 @@
 
         @media (max-width: 768px) { .tier-bottom { width: 180px; height: 70px; } .tier-middle { width: 140px; height: 60px; margin-top: -20px; } .tier-top { width: 100px; height: 50px; margin-top: -20px; } .candle { height: 35px; top: -30px; } .cake-message { font-size: 1.5rem; } }
 
-        .letter-container { width: 90%; max-width: 700px; max-height: 80vh; overflow-y: auto; animation: floatLetter 6s ease-in-out infinite; padding: 50px; }
+        .letter-container { width: 90%; max-width: 700px; max-height: 80vh; overflow-y: auto; scroll-behavior: smooth; animation: floatLetter 6s ease-in-out infinite; padding: 50px; }
         .letter-container::-webkit-scrollbar { width: 6px; }
         .letter-container::-webkit-scrollbar-track { background: transparent; }
         .letter-container::-webkit-scrollbar-thumb { background: rgba(183, 110, 121, 0.3); border-radius: 10px; }
         @keyframes floatLetter { 0% { transform: translateY(0); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0); } }
-        .letter-content { text-align: left; font-family: var(--font-body); font-size: 1.3rem; line-height: 1.8; color: #3b0e19; font-weight: 600; min-height: 300px; }
+        .letter-content { text-align: left; font-family: var(--font-body); font-size: 1.35rem; line-height: 1.8; color: #3b0e19; font-weight: 600; min-height: 300px; }
         .letter-content .great-vibes { font-family: var(--font-cursive); font-size: 2.8rem; color: #580a1c; margin: 15px 0; display: block; }
         .letter-actions { margin-top: 30px; text-align: center; opacity: 0; transition: opacity 1s ease; }
 
-        @media (max-width: 768px) { .letter-container { padding: 30px 20px; max-height: 75vh; } .letter-content { font-size: 1.1rem; line-height: 1.6; } .letter-content .great-vibes { font-size: 2.2rem; } }
+        @media (max-width: 768px) { .letter-container { padding: 30px 20px; max-height: 75vh; } .letter-content { font-size: 1.15rem; line-height: 1.6; } .letter-content .great-vibes { font-size: 2.2rem; } }
 
-        /* CELEBRATION SCENE - HIGH VISIBILITY DARK TEXT STYLING */
+        /* CELEBRATION SCENE */
         #celebration-scene { color: #3b0e19; }
         .final-message { 
             font-family: var(--font-title); 
@@ -245,9 +245,9 @@
     </section>
 
     <section class="scene" id="celebration-scene">
-        <div class="final-message" id="fm-1">I Love You, My Meow ❤️</div>
-        <div class="final-message" id="fm-2">Happy 18th Birthday</div>
-        <div class="final-message" id="fm-3">Forever Yours</div>
+        <div class="final-message" id="fm-1">Happy 18th Birthday, My Meow ❤️</div>
+        <div class="final-message" id="fm-2">I Love You so much Baccha🫂😘</div>
+        <div class="final-message" id="fm-3">Forever Yours🤗</div>
         <div class="final-message" id="fm-4">
             <span style="font-family: var(--font-body); font-size: 3vw; color: #3b0e19; font-weight: 700; text-shadow: 0 0 12px rgba(255,255,255,0.95);">Your Billa Boy,</span>
             <span class="vibes">Sudesh ❤️</span>
@@ -372,7 +372,7 @@
             isAnimating = true;
             document.body.style.pointerEvents = 'none';
 
-            const title = "Happy 18th Birthday, Meow";
+            const title = "Happy 18th Birthday, Sukhi";
             const titleEl = document.getElementById('welcome-title');
             title.split(' ').forEach((word, index) => { const span = document.createElement('span'); span.textContent = word + ' '; span.style.transitionDelay = `${0.8 + (index * 0.2)}s`; titleEl.appendChild(span); });
             setTimeout(() => { 
@@ -393,7 +393,7 @@
         const teaseMessages = [
             "Are you sure? 😜",
             "Wait a second! 🙈",
-            "Patience, my love! ❤️",
+            "Patience, my Damu! ❤️",
             "Okay, one last tap! ✨"
         ];
 
@@ -436,7 +436,7 @@
             const flames = document.querySelectorAll('.flame');
             flames.forEach(flame => flame.style.opacity = '0');
             candlesBlown = true;
-            cakeMsg.textContent = "Make a wish! Happy Birthday! 🎉";
+            cakeMsg.textContent = "Make a wish! Happy Birthday, Damu! 🎉";
             proceedLetterBtn.style.opacity = '1';
             proceedLetterBtn.style.pointerEvents = 'auto';
         });
@@ -446,36 +446,118 @@
             typeLetter();
         });
 
-        // LETTER TYPING EFFECT
-        const letterText = `Dearest Meow,\n\nHappy 18th Birthday! 🎉\n\nTurning 18 is a huge milestone, and I couldn't be happier to celebrate it with you. You bring so much joy, light, and sweetness into my life every single day.\n\nThank you for being your wonderful, amazing self. May this year bring you endless happiness, success, and all the love in the world.\n\nAlways here for you,\n`;
-        
+        // ================= PRANK LETTER DATA & TYPEWRITER ENGINE =================
+        const letterData = [
+            { text: "Dear Bhootni... 👻", class: "great-vibes", backspace: true },
+            { text: "Wait, no... Dear Bandariya... 🐒", class: "great-vibes", backspace: true },
+            { text: "Okay okay, sorry! 😂", class: "great-vibes", backspace: true },
+            { text: "Happy 18th Birthday, My Damu ❤️", class: "great-vibes" },
+            { text: "<br>Finally, the day is here… Happy 18th Birthday, Sukhi. ❤️<br><br>", class: "" },
+            { text: "Its hard to believe that its already been more than one year since you became such an important part of my life. Time has passed so quickly, but every moment with you has been special in its own way.<br><br>", class: "" },
+            { text: "Today, you officially turned 18. The world may say you are an adult now, but for me, you will always be my little kid—the same Damu I will always care about, tease, and protect.<br><br>", class: "" },
+            { text: "One thing I admire most about you is that no matter how angry you get with me, your heart always finds its way back to me. That is one of the many reasons you are so special to me.<br><br>", class: "" },
+            { text: "I have only one promise to make today…<br>I promise I will never stop teasing you and calling you “Meow”😸❤️<br><br>", class: "" },
+            { text: "I also have a dream that I hope one day becomes reality—to see you become an amazing doctor. I truly believe in you, and I will always be proud of every step you take toward your dreams.<br><br>", class: "" },
+            { text: "And if life has that beautiful future waiting for us, I hope one day I will get to call you 'Ajji Sunti Ho'😉❤️<br><br>", class: "" },
+            { text: "Thank you for all the smiles, all the little arguments, all the laughter, and for simply being yourself.<br><br>", class: "" },
+            { text: "Never stop smiling.<br>Never stop dreaming.<br>Never stop being the beautiful person you are.<br><br>", class: "" },
+            { text: "Enjoy every second of your special day because you truly deserve all the happiness in the world.<br><br>", class: "" },
+            { text: "Happy Birthday once again.<br><br>Your Billa Boy😼,<br>", class: "" },
+            { text: "Sudesh ❤️", class: "great-vibes" }
+        ];
+
         let letterTyped = false;
         function typeLetter() {
             if (letterTyped) return;
             letterTyped = true;
+
             const contentEl = document.getElementById('letter-content');
             const actionsEl = document.getElementById('letter-actions');
-            let index = 0;
+            const container = document.querySelector('.letter-container');
+            
+            let itemIndex = 0;
 
-            function typeChar() {
-                if (index < letterText.length) {
-                    if (letterText.substring(index, index + 2) === '\n\n') {
-                        contentEl.innerHTML += '<br><br>';
-                        index += 2;
-                    } else if (letterText[index] === '\n') {
-                        contentEl.innerHTML += '<br>';
-                        index++;
-                    } else {
-                        contentEl.innerHTML += letterText[index];
-                        index++;
-                    }
-                    setTimeout(typeChar, 35);
-                } else {
-                    contentEl.innerHTML += '<span class="great-vibes">Your Billa Boy ❤️</span>';
+            function processItem() {
+                if (itemIndex >= letterData.length) {
                     actionsEl.style.opacity = '1';
+                    container.scrollTop = container.scrollHeight;
+                    return;
+                }
+
+                const item = letterData[itemIndex];
+                const span = document.createElement('span');
+                if (item.class) span.className = item.class;
+                contentEl.appendChild(span);
+
+                if (item.backspace) {
+                    // Backspace Prank Logic (Supports emojis smoothly)
+                    const chars = Array.from(item.text);
+                    let charIndex = 0;
+
+                    function typePrankChar() {
+                        if (charIndex < chars.length) {
+                            span.textContent += chars[charIndex];
+                            charIndex++;
+                            container.scrollTop = container.scrollHeight;
+                            setTimeout(typePrankChar, 60);
+                        } else {
+                            setTimeout(backspacePrankChar, 800);
+                        }
+                    }
+
+                    function backspacePrankChar() {
+                        if (chars.length > 0) {
+                            chars.pop();
+                            span.textContent = chars.join('');
+                            setTimeout(backspacePrankChar, 35);
+                        } else {
+                            span.remove();
+                            itemIndex++;
+                            setTimeout(processItem, 300);
+                        }
+                    }
+
+                    typePrankChar();
+                } else {
+                    // Regular Typing Logic with HTML & Line Break parsing
+                    const rawText = item.text;
+                    const tokens = [];
+                    let i = 0;
+                    while (i < rawText.length) {
+                        if (rawText[i] === '<') {
+                            const closeIdx = rawText.indexOf('>', i);
+                            if (closeIdx !== -1) {
+                                tokens.push(rawText.substring(i, closeIdx + 1));
+                                i = closeIdx + 1;
+                                continue;
+                            }
+                        }
+                        tokens.push(rawText[i]);
+                        i++;
+                    }
+
+                    let tokenIdx = 0;
+                    function typeNormalToken() {
+                        if (tokenIdx < tokens.length) {
+                            const tok = tokens[tokenIdx];
+                            span.innerHTML += tok;
+                            tokenIdx++;
+                            container.scrollTop = container.scrollHeight;
+                            
+                            let delay = 25;
+                            if (tok === '<br>' || tok === '.' || tok === '!') delay = 70;
+                            setTimeout(typeNormalToken, delay);
+                        } else {
+                            itemIndex++;
+                            setTimeout(processItem, 100);
+                        }
+                    }
+
+                    typeNormalToken();
                 }
             }
-            typeChar();
+
+            processItem();
         }
 
         // CELEBRATION SCENE SEQUENCE
@@ -494,7 +576,7 @@
                     msgs.forEach(mId => document.getElementById(mId).classList.remove('show'));
                     document.getElementById(id).classList.add('show');
                 }, delay);
-                delay += 3000;
+                delay += 3200;
             });
 
             setTimeout(() => {
@@ -520,6 +602,15 @@
                 const pct = (audio.currentTime / audio.duration) * 100;
                 progressBar.style.width = pct + '%';
             }
+        });
+
+        // Click-to-seek on music progress bar
+        const progressContainer = document.getElementById('mp-progress-container');
+        progressContainer.addEventListener('click', (e) => {
+            if (!audio.duration) return;
+            const rect = progressContainer.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            audio.currentTime = (clickX / rect.width) * audio.duration;
         });
 
         // SECRET EASTER EGG MODAL
